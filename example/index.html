@@ -1,0 +1,37 @@
+<html>
+  <body>
+    <div ng-app="app">
+      <div ng-controller="mainCtrl">
+        <h3>d3Promise.csv()</h3>
+        {{csv}}
+        <h3>d3Promise.html()</h3>
+        {{html}}
+      </div>
+    </div>
+
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/d3/d3.min.js"></script>
+    <script src="../src/angular-d3-promise.js"></script>
+    <script>
+      // Create <div>
+      ['csv', 'tsv', 'json', 'xml', 'text', 'html'].forEach(function(fnName){
+        var div = document.createElement('div');
+        div.setAttribute('id', 'test-'+fnName);
+        document.body.appendChild(div);
+      });
+
+      angular.module('app', ['d3.promise'])
+        .controller('mainCtrl', ['d3Promise', '$scope', function(d3Promise, $scope){
+          d3Promise.csv('data/test.csv').then(function(data){
+            $scope.csv = data.map(function(row){
+              return JSON.stringify(row);
+            }).join('\n');
+          });
+
+          d3Promise.text('data/test.csv').then(function(data){
+            $scope.html = data;
+          });
+        }]);
+    </script>
+  </body>
+</html>
