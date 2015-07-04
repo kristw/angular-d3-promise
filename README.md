@@ -8,8 +8,15 @@ This library uses Angular's $q for the implementation of promises.
 ### Installation
 
 ```
-bower install angular-d3-promise
+bower install angular-d3-promise --save
 ```
+
+or
+
+```
+npm install angular-d3-promise --save
+```
+
 
 This library can be imported using standard `<script>` as well as AMD (such as RequireJS).
 
