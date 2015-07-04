@@ -1,6 +1,6 @@
 {
   "name": "angular-d3-promise",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Convert a chart created using d3Kit into an angular directive in one command",
   "main": "dist/angular-d3-promise.min.js",
   "scripts": {
