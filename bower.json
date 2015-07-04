@@ -6,10 +6,9 @@
     "@kristw"
   ],
   "description": "d3.promise for AngularJS (d3.csv & friends that return promises instead of accepting callbacks)",
-  "main": "src/angular-d3-promise.js",
+  "main": "dist/angular-d3-promise.min.js",
   "moduleType": [
     "amd",
-    "es6",
     "globals"
   ],
   "keywords": [
