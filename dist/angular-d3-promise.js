@@ -6,7 +6,15 @@
     // Support AMD. Register as an anonymous module.
     // EDIT: List all dependencies in AMD style
     define(['angular', 'd3'], factory);
-  } else {
+  }
+  else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    // EDIT: Pass dependencies to factory function
+    module.exports = factory(require('angular'), require('d3'));
+  }
+  else {
     // No AMD. Set module as a global variable
     // EDIT: Pass dependencies to factory function
     root.d3.promise = factory(root.angular, root.d3);
